@@ -1,0 +1,12 @@
+:root{
+  --color-1:black;
+  --color-2:white;
+  --color-3:rgb(150, 165, 224);
+}
+
+.main-page{
+  background-color: var(--color-1);
+  /* height: 500px; */
+  width: 100vw;  /* 100% of the viewport width */
+  height: 100vh;
+}
