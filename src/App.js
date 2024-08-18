@@ -3,8 +3,9 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import './App.css'
 import Home from './Home'
 import About from './components/About'
-import Services from './components/Services'
 import Contact from './components/Contact'
+import Services from './components/Services'
+
 
 function App() {
   return (
