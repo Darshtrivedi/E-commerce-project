@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-import { BrowserRouter,Router,Route,Routes,Link } from 'react-router-dom'
-// import '../assets/navbar.css'
-import '../assets/Navbar1.css'
+import {Link } from 'react-router-dom'
+import '../assets/Navbar.css'
 import Logo from '../logo192.png'
-import Home from '../Home'
 
 
 // export default function Navbar() {
@@ -41,7 +39,7 @@ function Navbar() {
     
       const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Form submitted:'+ searchData.search);
+        alert('You searched for :'+ searchData.search);
       };
   return (
     <div>
@@ -53,7 +51,7 @@ function Navbar() {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/services">Services</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/contact">Contact-us</Link></li>
           </ul>
           <form onSubmit={handleSubmit}>
           <div className='search-div'>
@@ -63,6 +61,7 @@ function Navbar() {
           </form>
           <div className='navbar-buttons'>
               <Link to="/login"><button className="buttons">Login</button></Link>
+              
               {/* <Link to="/signup"><button className="buttons">Signup</button></Link> */}
 
           </div>

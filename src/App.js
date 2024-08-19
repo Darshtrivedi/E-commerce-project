@@ -1,10 +1,12 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './Home'
 import About from './components/About'
 import Contact from './components/Contact'
 import Services from './components/Services'
+import Login from './components/Login'
+
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/login" element={<Login />} />
               {/* <Route path="*" element={alert("Page not found")} /> */}
               {/* Add other routes here */}
           </Routes>

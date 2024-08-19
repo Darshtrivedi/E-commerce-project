@@ -1,0 +1,53 @@
+:root{
+    --color-1:black;
+    --color-2:#D3D3D3;
+    --color-3:#444444;
+}
+.logo{
+    margin-top: 10px;
+    margin: 3%;
+    display: inline;
+}
+
+.navbar {
+    display: inline-block;
+    background-color:var(--color-2);
+    /* padding-top: 20px; */
+    padding-bottom: 20px;
+    width:100%;
+}
+
+.navbar-links {
+    /* float: right; */
+    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; 
+    margin: 0;
+    padding: 0;
+    /* display: inline; */
+    /* margin-right: 6%; */
+    /* justify-content: space-around; */
+}
+
+.navbar-links li {
+    display: inline;
+}
+
+.navbar-links li a {
+    color: var(--color-1);
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+    background-color: var(--color-3);
+    color: var(--color-2);
+
+}
+
+.login-button{
+    display: inline;
+    float: inline-end;
+}
