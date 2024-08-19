@@ -6,6 +6,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Services from './components/Services'
 import Login from './components/Login'
+import Signup from './components/Signup'
 
 
 
@@ -19,6 +20,7 @@ function App() {
               <Route path="/services" element={<Services />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
               {/* <Route path="*" element={alert("Page not found")} /> */}
               {/* Add other routes here */}
           </Routes>

@@ -8,6 +8,7 @@
     --color-2:#D3D3D3;
     --color-3:#444444;
     --color-4:white;
+    --color-5:lightslategray;
 }
 
 .page-body{
@@ -15,12 +16,13 @@
     border-radius: 10%;
     height: 430px;
     width: 400px;
+    font-family: 'Montserrat-Regular';
 }
 
 .body-header{
     font-size: x-large;
     font-variant: small-caps;
-    font-family: 'Montserrat-Regular';
+    /* font-family: 'Montserrat-Regular'; */
 }
 
 .horizontal-line{
@@ -37,6 +39,7 @@
     cursor: pointer;
 }
 .input{
+    padding-left: 2%;
     background-color: transparent;
     border: 1px solid var(--color-1);
     border-top: 0;
@@ -45,6 +48,7 @@
     width: 300px;
     height: 35px;
     &::placeholder{
+
         text-transform: capitalize;
     }
     &:focus{
@@ -53,5 +57,61 @@
         border-top: 0;
     border-right: 0;
     border-left: 0;
+    }
+}
+.password-note{
+    color: red;
+    font-family: 'Montserrat-Regular';
+    font-size: small;
+}
+
+.submit{
+    /* margin-top: 10%; */
+    font-size: medium;
+    font-family: 'Montserrat-Regular',sans-serif;
+    height: 35px;
+    width: 80px;
+    cursor: pointer;
+    color: var(--color-2);
+    background-color: var(--color-1);
+    border: 0px;
+    border-radius: 20%;
+    &:hover{
+        color: var(--color-1);
+        transition: 0.2s;
+        background-color: var(--color-5);
+
+    }
+}
+
+.login-footer{
+    margin-top: 8%;
+    padding: 3%;
+}
+
+.signup-footer{
+    margin-top: 3%;
+    padding: 3%;
+}
+
+.forgot-pass{
+    margin-left: 1%;
+    float: inline-start;
+    font-size: small;
+    color: var(--color-3);
+    text-decoration: none;
+    &:hover{
+        color:red;
+    }
+}
+
+.need-help{
+    margin-right: 1%;
+    float: inline-end;
+    font-size: small;
+    color: var(--color-3);
+    text-decoration: none;
+    &:hover{
+        color:red;
     }
 }

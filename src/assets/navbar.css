@@ -9,6 +9,7 @@
     --color-2:#D3D3D3;
     --color-3:#444444;
     --color-4:white;
+    --color-5:lightslategray;
 }
 /* Navbar container */
 .navbar {
@@ -95,7 +96,7 @@
 
     &:hover{
         color:var(--color-1);
-        background-color: lightslategray;
+        background-color:var(--color-5);
     }
 }
 
