@@ -13,16 +13,20 @@
 }
 /* Navbar container */
 .navbar {
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 17px;
-    background-color:var(--color-2); /* Dark background */
+    /* background-color:var(--color-2); */
+    background-color: black;
+    border-bottom: 2px double var(--color-2);
+    /* box-shadow: 0 4px 4px var(--color-2); */
 }
 
 /* Logo styling */
 .logo img {
-    height: 50px; /* Adjust the height of the logo */
+    height: 50px; 
 }
 
 /* Navbar links */
@@ -35,12 +39,13 @@
 
 .search-icon{
     float: inline-end;
-    color: var(--color-4);
+    color: var(--color-2);
     font-size: 20px;
 }
 
 .search-div{
-    background-color: var(--color-2);
+    /* background-color: var(--color-2); */
+    background-color: black;
     width: 100%;
     float: inline-end;
     margin-left: 20px;
@@ -55,17 +60,19 @@
     padding-left: 10px;
     background-color: transparent;
     float: inline-end;
-    border: 1px solid var(--color-1);
+    /* border: 1px solid var(--color-1); */
+    border: 1px solid var(--color-2);
+    color: var(--color-2);
 
     &::placeholder{
-       
         font-size: 23px;
     }
 }
 
 .navbar-links li a {
     font-family: 'Montserrat-Regular';
-    color: var(--color-1); /* White text for links */
+    /* color: var(--color-1); */
+    color: var(--color-2);
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s;

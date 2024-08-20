@@ -4,6 +4,10 @@
   --color-3:rgb(150, 165, 224);
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .main-page{
   background-color: var(--color-1);
   /* height: 500px; */
