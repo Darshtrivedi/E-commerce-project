@@ -1,0 +1,28 @@
+.ad-section {
+    /* position: relative; */
+    width: 100%;
+    background-color: aliceblue;
+    height: 600px;
+    overflow: hidden;
+  }
+  
+  .ad-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    justify-content: center;
+    justify-items: center;
+    transition: opacity 1s ease-in-out;
+
+  }
+
+  
+  .ad-slide.active {
+    opacity: 1;
+  }
+  .ad-image{
+    height: 100%;
+    width: 100% ;
+  }
+  

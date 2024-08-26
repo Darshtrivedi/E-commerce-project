@@ -25,16 +25,12 @@
 
 .about-body{
     /* margin-top: 5%; */
-    padding-top: 8%;
+    padding-top: 6%;
     padding-left: 6%;
-    backdrop-filter: blur(20px);
     background-color: var(--color-1);
-    width: 700px;
-    /* height: 100%; */
-    /* border: 1px solid var(--color-2); */
+    width: 70%;
     border-radius: 10%;
     box-shadow: 1px 1px 9px 1px var(--color-5);
-
 }
 
 .about-header{
@@ -71,4 +67,55 @@
     text-transform: capitalize;
     color: var(--color-2);
 }
+@media (min-width:480px) and (max-width:768px) {
+    .about-page{
+        background: none;
+        background-size:cover; /*Ensures the image covers the entire div*/
+        background-position: center; /*Centers the image*/
+        color: var(--color-1);
+        height: fit-content;
+        font-family: 'Montserrat-Regular';
+        width: 100%;
+        padding: 4%;
+        /* border-top: 1px solid var(--color-2); */
+    }
+    .about-body{
+        /* margin-top: 5%; */
+        padding-top: 6%;
+        padding-left: 6%;
+        /* backdrop-filter: blur(20px); */
+        background-color: var(--color-1);
+        width: 70%;
+        border: none;
+        box-shadow: 0;
+        border-radius: 0;
+    
+    }
+}
+@media screen and (max-width:480px) {
+    .about-page{
+        background: none;
+        background-size:cover; /*Ensures the image covers the entire div*/
+        /* background-position: center; Centers the image */
+        color: var(--color-1);
+        height: fit-content;
+        font-family: 'Montserrat-Regular';
+        background-color: var(--color-1);
+        width: 100%;
+        padding: 4%;
+        /* border-top: 1px solid var(--color-2); */
+    }
+    .about-body{
+        margin-top: 5%;
+        padding-top: 6%;
+        padding-left: 6%;
 
+        /* backdrop-filter: blur(20px); */
+        background-color: var(--color-1);
+        width: 90%;
+        border: 0px;
+        box-shadow: 0;
+        border-radius: 0px;
+    
+    }
+}

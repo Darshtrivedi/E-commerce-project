@@ -1,29 +1,12 @@
 import React, { useState } from 'react'
 import {Link } from 'react-router-dom'
+// import { Link, Element, animateScroll as scroll } from 'react-scroll';
 import '../assets/navbar.css'
 import Logo from '../logo192.png'
 
 
-// export default function Navbar() {
-//   return (
-//     <div>
-//        <nav className="navbar">
-//             <p className='logo'>Hello</p>
-//             <ul className="navbar-links">
-//                 <li><Link exact to="/">Home</Link></li>
-//                 <li><Link to="/about">About</Link></li>
-//                 <li><Link to="/services">Services</Link></li>
-//                 <li><Link to="/contact">Contact</Link></li>
-                
-//             </ul>
-//             <Link to="/login" className='login-button'><button>Login</button></Link>
-//         </nav>
-        
-//     </div>
-//   )
-// }
-
-function Navbar() {
+export default function Navbar() {
+ 
     // const[search,setSearch] = useState("")
     const [searchData, setSearchData] = useState({
         search:'',
@@ -47,28 +30,29 @@ function Navbar() {
           <div className="logo">
               <img src={Logo} alt="Logo" /> {/* Replace with your logo path */}
           </div>
-          <ul className="navbar-links">
+          
+          <ul className="navbar-links" id='navbar-links'>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/services">Services</Link></li>
-              <li><Link to="/contact">Contact-us</Link></li>
+              <li> <Link to="/contact">Contact us</Link></li>
           </ul>
           <form onSubmit={handleSubmit}>
           <div className='search-div'>
             {/* <label htmlFor='search' className='search-icon'>⌕</label> */}
             <input type='search' id='search' className='search-bar' placeholder='⌕' name='search'onChange={handleChange}/>
           </div>
+          {/* <input type="checkbox" id="nav-toggle"/>
+          <label for="nav-toggle" className='toggle-icon' target='navbar-links'>&#9776;</label> */}
           </form>
           <div className='navbar-buttons'>
               <Link to="/login"><button className="buttons">Login</button></Link>
-              
+             
               {/* <Link to="/signup"><button className="buttons">Signup</button></Link> */}
-
           </div>
       </nav>
-      
       </div>
   );
 }
 
-export default Navbar;
+// export default Navbar;

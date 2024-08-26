@@ -1,15 +1,16 @@
+/* Basic reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
     --color-1: black;
     --color-2: #D3D3D3;
     --color-3: #444444;
     --color-4: white;
     --color-5: lightslategray;
-    --color-6: #1E90FF;
 }
 
 /* Navbar container */
@@ -19,8 +20,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 17px;
-    background-color: var(--color-1);
+    background-color: black;
     border-bottom: 2px double var(--color-2);
+    position: relative;
 }
 
 /* Logo styling */
@@ -31,14 +33,26 @@
 /* Navbar links */
 .navbar-links {
     margin-left: 25%;
-    margin-inline-start: 0%;
+    list-style: none;
     display: flex;
-    gap: 50px;
-    list-style-type: square;
+    gap: 30px;
+    transition: max-height 0.3s ease-out;
+}
+
+.navbar-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    padding: 20px 0;
+    max-height: 300px; /* Adjust as needed */
 }
 
 .navbar-links li {
-    list-style: none;
+    margin: 10px 0;
 }
 
 .navbar-links li a {
@@ -46,56 +60,33 @@
     color: var(--color-2);
     text-decoration: none;
     font-size: 16px;
-    padding: 8px 12px; /* Added padding for the box effect */
-    border-radius: 5px; /* Added border radius for a rounded box effect */
-    transition: color 0.3s, background-color 0.3s, transform 0.3s;
-    display: inline-block; /* Ensures the padding is applied correctly */
+    transition: color 0.3s;
 }
 
 .navbar-links li a:hover {
-    color: var(--color-4); /* Change text color on hover */
-    transform: translateY(-2px); /* Slight lift effect on hover */
-    border-bottom: 2px solid #1E90FF;
-
+    color: #1E90FF; /* Change color on hover */
 }
 
-/* Search icon */
-.search-icon {
-    float: inline-end;
-    color: var(--color-2);
-    font-size: 20px;
-}
-
-/* Search bar container */
+/* Search bar */
 .search-div {
-    background-color: var(--color-1);
-    width: 100%;
-    float: inline-end;
-    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    background-color: black;
 }
 
 .search-bar {
-    margin-top: 1.5%;
-    height: 40px;
+    height: 25px;
     width: 350px;
     margin-right: 20px;
     font-size: medium;
     padding-left: 10px;
-    background-color: transparent;
     border: 1px solid var(--color-2);
-    border-radius: 10px;
     color: var(--color-2);
-    transition: border-color 0.3s ease, color 0.3s ease;
+    background-color: transparent;
 }
 
 .search-bar::placeholder {
-    color: var(--color-2);
-    font-size: 20px;
-}
-
-.search-bar:focus {
-    border-color: var(--color-6);
-    outline: none;
+    font-size: 23px;
 }
 
 /* Navbar buttons */
@@ -112,12 +103,48 @@
     padding: 8px 16px;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
     color: var(--color-2);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar-buttons .buttons:hover {
     color: var(--color-1);
     background-color: var(--color-5);
-    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Toggle icon */
+.toggle-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.toggle-icon .bar {
+    background-color: var(--color-2);
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .toggle-icon {
+        display: flex;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .search-bar {
+        width: 200px;
+    }
 }

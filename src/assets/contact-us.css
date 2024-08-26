@@ -1,0 +1,55 @@
+/* background-color: #1c1c1c; */
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('./fonts/Montserrat-SemiBold.ttf') format('truetype');
+    /* font-family: 'Montserrat-Regular';
+    src: url('./fonts/Montserrat-Regular.ttf') format('truetype') */
+}
+
+:root{
+    --color-1:black;
+    --color-2:#D3D3D3;
+    --color-3:#444444;
+    --color-4:white;
+    --color-5:lightslategray;
+    --font-shadow:rgb(42, 40, 40);
+}
+.contact-us-body-left{
+    height: 100vh;
+    width: 105vh;
+    background-color:#1c1c1c ;
+    display: inline-block;
+    border-right: 2px solid var(--color-5);
+    text-align: start;
+    text-indent: 2%;
+    text-size-adjust:inherit ;
+    padding: 2%;
+    text-overflow: 0;
+    .header{
+        color: var(--color-2);
+        font-size: xx-large;
+        font-family: 'Montserrat-SemiBold',sans-serif;
+    }
+    .horizontal-line{
+        margin: 2%;
+        border: 1px solid var(--color-1);
+    }
+    .paragraph{
+        margin-top: 6%;
+        padding: 1%;
+        color: var(--color-2);
+        .icon{
+            
+            /* background-color: var(--color-3); */
+            color: var(--color-1);
+        }
+    }
+}
+.contact-us-body-right{
+
+    height: 100vh;
+    width: 100vh;
+    
+    /* background-color:blue ; */
+    display: inline-block;
+}

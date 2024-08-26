@@ -5,7 +5,9 @@
     box-sizing: border-box;
 }
 :root{
-    --color-1:black;
+    /* --color-1:black; */
+    --navbar-background:rgb(44, 39, 39);
+    --color-1:rgb(0, 0, 0);
     --color-2:#D3D3D3;
     --color-3:#444444;
     --color-4:white;
@@ -19,8 +21,8 @@
     align-items: center;
     padding: 17px;
     /* background-color:var(--color-2); */
-    background-color: black;
-    border-bottom: 2px double var(--color-2);
+    background-color: var(--navbar-background);
+    border-bottom: 2px double var(--color-5);
     /* box-shadow: 0 4px 4px var(--color-2); */
 }
 
@@ -45,7 +47,7 @@
 
 .search-div{
     /* background-color: var(--color-2); */
-    background-color: black;
+    background-color: var(--color-1);
     width: 100%;
     float: inline-end;
     margin-left: 20px;
@@ -107,6 +109,12 @@
     }
 }
 
-
-
-
+.nav-toggle{
+    float: right;
+    display: none;
+}
+@media screen and (max-width:480px) {
+    .nav-toggle{
+        display: block;
+    }
+}

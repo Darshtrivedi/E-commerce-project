@@ -1,7 +1,7 @@
 :root{
   --color-1:black;
   --color-2:white;
-  --color-3:rgb(150, 165, 224);
+  --color-3:#D3D3D3;
 }
 
 body{
@@ -13,4 +13,10 @@ body{
   /* height: 500px; */
   width: 100vw;  /* 100% of the viewport width */
   height: 100vh;
+}
+
+/* scrollbar */
+html {
+  scrollbar-width: thin; 
+  scrollbar-color: var(--color-1) var(--color-3); 
 }
