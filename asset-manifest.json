@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/E-commerce-project/static/css/main.a4275239.css",
+    "main.js": "/E-commerce-project/static/js/main.afc64449.js",
+    "static/js/453.5e560239.chunk.js": "/E-commerce-project/static/js/453.5e560239.chunk.js",
+    "static/media/ad-6.jpg": "/E-commerce-project/static/media/ad-6.4f5ab55376d20971f36e.jpg",
+    "static/media/fa-solid-900.ttf": "/E-commerce-project/static/media/fa-solid-900.07ed6d5fa32c1d54af0f.ttf",
+    "static/media/OpenSans-Light.ttf": "/E-commerce-project/static/media/OpenSans-Light.3d5923f94fc319b5652a.ttf",
+    "static/media/fa-brands-400.ttf": "/E-commerce-project/static/media/fa-brands-400.0ff70dcbf135d859ebf3.ttf",
+    "static/media/fa-solid-900.woff2": "/E-commerce-project/static/media/fa-solid-900.93f719f4d62bfa3e748c.woff2",
+    "static/media/fa-brands-400.woff2": "/E-commerce-project/static/media/fa-brands-400.bb8d5a145e22822103fb.woff2",
+    "static/media/Headphones-1.webp": "/E-commerce-project/static/media/Headphones-1.3b6e0c37b8edad6be854.webp",
+    "static/media/ad-5.jpg": "/E-commerce-project/static/media/ad-5.9f623848e019af747c1e.jpg",
+    "static/media/fa-regular-400.ttf": "/E-commerce-project/static/media/fa-regular-400.17a6e1aebccdbaa39e78.ttf",
+    "static/media/keyboard-mouse-1.jpg": "/E-commerce-project/static/media/keyboard-mouse-1.ea8bb9ace360165a31fc.jpg",
+    "static/media/fa-regular-400.woff2": "/E-commerce-project/static/media/fa-regular-400.bc3722686635b5f86132.woff2",
+    "static/media/ad-4.jpg": "/E-commerce-project/static/media/ad-4.1ae6f854497f22c728fb.jpg",
+    "static/media/fa-v4compatibility.ttf": "/E-commerce-project/static/media/fa-v4compatibility.0f6cb412603527bda691.ttf",
+    "static/media/fa-v4compatibility.woff2": "/E-commerce-project/static/media/fa-v4compatibility.6cfec8414be20e2c3426.woff2",
+    "static/media/monitor.avif": "/E-commerce-project/static/media/monitor.1f0c8d6cd7587679a019.avif",
+    "index.html": "/E-commerce-project/index.html",
+    "main.a4275239.css.map": "/E-commerce-project/static/css/main.a4275239.css.map",
+    "main.afc64449.js.map": "/E-commerce-project/static/js/main.afc64449.js.map",
+    "453.5e560239.chunk.js.map": "/E-commerce-project/static/js/453.5e560239.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a4275239.css",
+    "static/js/main.afc64449.js"
+  ]
+}
