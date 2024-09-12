@@ -1,14 +1,25 @@
-from django.shortcuts import render
-
-# Create your views here.
 # myapp/views.py
 
+from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.models import User
 from .serializers import RegisterSerializer, LoginSerializer
+
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from django.contrib.auth.decorators import login_required
+
+@api_view(['GET'])
+def check_login_status(request):
+    if request.user.is_authenticated:
+        return Response({'isLoggedIn': True, 'username': request.user.username})
+    return Response({'isLoggedIn': False})
+
+
+
 
 class RegisterView(generics.GenericAPIView):
     serializer_class = RegisterSerializer
@@ -35,7 +46,18 @@ class LoginView(generics.GenericAPIView):
         user = serializer.validated_data
         refresh = RefreshToken.for_user(user)
         return Response({
-            "user": RegisterSerializer(user, context=self.get_serializer_context()).data,
+            # "user": RegisterSerializer(user, context=self.get_serializer_context()).data,
+            "user": {
+                "id": user.id,  # You can also return other user fields like 'id', 'email'
+                "username": user.username,  # Explicitly returning the username here
+                "email": user.email,
+            },
             "refresh": str(refresh),
             "access": str(refresh.access_token),
         })
+    
+    def get(self, request):
+        if request.user.is_authenticated:
+            return Response({'isLoggedIn': True, 'username': request.user.username})
+        return Response({'isLoggedIn': False})
+

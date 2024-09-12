@@ -10,8 +10,7 @@
     --color-4:white;
     --color-5:lightslategray;
 } 
- /*
-
+/*
 .products-category-section{
     background-color: rgb(168, 155, 155);
     border-radius: 2%;
@@ -186,10 +185,9 @@
     overflow: hidden;
     transition: filter 0.2s ease-in-out, background-color 0.5s ease-in-out;
     border-radius: 5%;
-    /* For the blur effect, we use filter. */
     box-shadow: 0px 4px 8px rgba(10, 10, 10, 0.6); 
-
 }
+
 
 .hover-container:hover {
     filter: brightness(70%);
@@ -240,9 +238,6 @@
     /* Darkens the overlay on hover */
 }
 
-
-
-
 .products-list-1{
    /* margin-top: 0; */
    display: grid;
@@ -254,10 +249,16 @@
    /* background-color: var(--color-2); */
    background-color: var(--color-2);
    .header{
-    color: var(--color-1);
-    background-color: #444444;
-    display: block;
+    width: 100vh;
+    .text{
+      float: left;
+      color: var(--color-1);
+      background-color: #444444;
+      display: block;
+
+     }
    }
+   
   
 }
 

@@ -1,72 +1,115 @@
-
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import {React,useState} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css'; // Import Font Awesome
 import Navbar from './Navbar';
-import '../assets/login-signup.css';
+import { Link } from 'react-router-dom';
+import '../assets/login.css'
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faLock ,faUser} from '@fortawesome/free-solid-svg-icons';
+import {  faLock ,faUser} from '@fortawesome/free-solid-svg-icons';
 
 export default function Login() {
-    const [loginData, setLoginData] = useState({
-        username: '',
-        password: '',
+  const [loginData, setLoginData] = useState({
+    username: '',
+    password: '',
+});
+
+const handleChange = (e) => {
+    const { name, value } = e.target;
+    setLoginData({
+      ...loginData,
+      [name]: value,
     });
+};
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setLoginData({
-          ...loginData,
-          [name]: value,
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+        const response = await axios.post('http://localhost:8000/api/login/', {
+            username: loginData.username, 
+            password: loginData.password
         });
-    };
+     
+        localStorage.setItem('token', response.data.access);  // Save JWT token
+        alert('Login successful!');
+        setLoginData({username:'',password:''})
+    } catch (error) {
+        setLoginData({username:'',password:''})
+        console.error('Login error:', error);
+        alert('Invalid credentials!');
+    }
+};
+  return (
+    <div  >
+    <Navbar/>
+    <section className="h-100" style={{overflow:'hidden'}}>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-sm-6 text-black">
+            <div className="px-5 ms-xl-4">
+              <i className="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style={{ color: '#709085' }}></i>
+              <span className="h1 fw-bold mb-0">Logo</span>
+            </div>
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:8000/api/login/', {
-                username: loginData.username, // Changed from 'email' to 'username'
-                password: loginData.password
-            });
-            console.log('User logged in:', response.data);
-            localStorage.setItem('token', response.data.access);  // Save JWT token
-            alert('Login successful!');
-        } catch (error) {
-            console.error('Login error:', error);
-            alert('Invalid credentials!');
-        }
-    };
+            <div className="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+              <form style={{ width: '23rem' }} onSubmit={handleSubmit}>
+                <h3 className="fw-normal text-center mb-3 pb-3" style={{ letterSpacing: '1px' }}>
+                  Log in
+                </h3>
 
-    return (
-        <div>
-            <Navbar />
-            <center>
-                <br />
-                <div className='page-body'>
-                    <br />
-                    <p className='body-header'>Login</p>
-                    <br />
-                    <hr className='horizontal-line' />
-                    <br /> <br /> <br />
-                    <form onSubmit={handleSubmit}>
-                        <label htmlFor='username' className='input-label'><FontAwesomeIcon icon={faUser} /></label>
-                        <input type='text' name='username' id='username' placeholder='enter your username' className='input' onChange={handleChange} required />
-                        <br /> <br /> <br />
-                        <label htmlFor='password' className='input-label'><FontAwesomeIcon icon={faLock} /></label>
-                        <input type='password' name='password' id='password' placeholder='enter your password' className='input' maxLength={12}
-                        pattern='^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*\d)[A-Za-z\d!@#$%^&*]{6,12}$'
-                        onChange={handleChange} required />
-                        <br />
-                        <p className='password-note'>(Note :  password must contain a capital letter, symbol, number, and length must be between 6 to 12 characters)</p>
-                        <br /> <br />
-                        <input type='submit' className='submit' />
-                        <div className='login-footer'>
-                            <Link to='/forgot-pass' className='forgot-pass'>forgot password?</Link>
-                            <Link to='/signup' className='need-help'>New user?</Link>
-                        </div>
-                    </form>
+                {/* <label htmlFor='username' className='input-label  '><FontAwesomeIcon icon={faUser} /></label> */}
+
+                {/* <div className=" form-outline mb-4"> */}
+                  <input
+                    type="text"
+                    id="username"
+                    name='username'
+                    className=" form-control form-control-lg mb-4"
+                    placeholder='Username'
+                    value={loginData.username}
+                    onChange={handleChange}
+                  />
+                {/* </div> */}
+
+                
+                  <input
+                    type="password"
+                    id='password'
+                    name='password'
+                    className="form-control form-control-lg mb-4"
+                    placeholder='Password'
+                    onChange={handleChange}
+                    value={loginData.password}
+                  />
+                
+                <div className="pt-1 mb-4">
+                  <button className="btn btn-info w-100 btn-lg btn-block" type="submit"> 
+                    Login
+                  </button>
                 </div>
-            </center>
+
+                <p className="small mb-5 pb-lg-2">
+                  <Link to='/forgotpass' style={{textDecoration:"none"}}>Forgot password?</Link>
+                  <Link to='/signup' className='float-end' style={{textDecoration:"none"}}>New user?</Link>  
+                </p>
+
+
+
+              </form>
+            </div>
+          </div>
+          
+          <div className="col-sm-6 px-0 d-none d-sm-block login-image ">
+            <img
+              src="https://img.freepik.com/free-photo/top-view-set-gadgets-purple-neon-light-blue_155003-19114.jpg"
+              alt="Login"
+              className="w-100 vh-100"
+              style={{ objectFit: 'cover', objectPosition: 'left' }}
+            />
+          </div>
         </div>
-    );
-}
+      </div>
+    </section>
+    </div>
+  );
+};

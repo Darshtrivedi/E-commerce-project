@@ -1,0 +1,23 @@
+/* Carousel image styling */
+.ad-img {
+    height: 600px;
+    /* width: 100vh; */
+    object-fit: cover;
+  }
+  
+  /* Custom caption styling */
+  .carousel-caption-custom {
+    background-color: rgba(0, 31, 63, 0.75); /*Deep Navy Blue with transparency*/
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Caption text styling */
+  .carousel-caption-custom h3 {
+    color: #ffca28; /* Amber */
+  }
+  
+  .carousel-caption-custom p {
+    color: #f8f9fa; /* Soft White */
+  }
+  
