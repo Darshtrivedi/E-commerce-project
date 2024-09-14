@@ -48,12 +48,12 @@ useEffect(()=>{
 
   return (
     <div>
-    <Navbar/>
+
     
     <div className="container mt-5">
       <div className="row">
         <div className="col-md-6">
-          <img src={product.image_path} alt="Image not available" className="img-fluid rounded" />
+          <img src={product.image_path} alt="not available" className="img-fluid rounded" />
         </div>
         <div className="col-md-6" style={{borderLeft:"1px solid black"}}>
           <h1>{product.name}</h1>

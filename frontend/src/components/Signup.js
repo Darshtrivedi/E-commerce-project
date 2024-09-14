@@ -23,7 +23,10 @@ export default function SignupPage() {
           [name]: value,
         });
       };
-    
+
+
+      const[message,setMessage] = useState('')
+      
       const handleSubmit = async (e) => {
         e.preventDefault();
         if (signupData.password1 !== signupData.password2) {
@@ -37,32 +40,26 @@ export default function SignupPage() {
           email: signupData.email,
           password: signupData.password1,
         };
-    
         try {
-          const response = await axios.post('http://localhost:8000/api/register/', userData);
-          console.log('User registered:', response.data);
-          alert('Registration successful!');
-          setSignupData({
-            username: '',
-            email: '',
-            password1: '',
-            password2: '',
-          })
-          navigate("/login")
-          // Optionally, redirect to login page or reset form
+            const response = await axios.post('http://127.0.0.1:8000/signup/', userData);
+            setMessage(response.data.message);
+            setSignupData({
+              username: '',
+              email: '',
+              password1: '',
+              password2: '',
+            })
+            navigate("/login")
         } catch (error) {
-          console.error('Registration error:', error);
-          setErrorMessage('Error registering user. Please try again.');
+            setMessage(error.response.data.error);
         }
-
-        
-        
-      };
+    };
 
   return (
     <div>
-        <Navbar/>
     <section className="vh-100 bg-light">
+      <h2>{errorMessage}</h2>
+      <h2>{message}</h2>
       <div className="container-fluid h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           

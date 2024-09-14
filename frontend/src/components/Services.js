@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 export default function Services() {
   return (
     <div>
-      <Navbar/>
+     
     </div>
   )
 }

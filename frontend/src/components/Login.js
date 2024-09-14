@@ -5,10 +5,9 @@ import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 import '../assets/login.css'
 import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faLock ,faUser} from '@fortawesome/free-solid-svg-icons';
 
-export default function Login() {
+
+export default function Login({ setUser }) {
   const [loginData, setLoginData] = useState({
     username: '',
     password: '',
@@ -22,26 +21,30 @@ const handleChange = (e) => {
     });
 };
 
-const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-        const response = await axios.post('http://localhost:8000/api/login/', {
-            username: loginData.username, 
-            password: loginData.password
-        });
-     
-        localStorage.setItem('token', response.data.access);  // Save JWT token
-        alert('Login successful!');
-        setLoginData({username:'',password:''})
-    } catch (error) {
-        setLoginData({username:'',password:''})
-        console.error('Login error:', error);
-        alert('Invalid credentials!');
-    }
-};
+
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://127.0.0.1:8000/login/', {
+              username: loginData.username, 
+              password: loginData.password
+            });
+            
+            // Save token and user details in localStorage
+            localStorage.setItem('token', response.data.access);
+            localStorage.setItem('username', loginData.username);
+
+            // Update user state in parent component
+            setUser({ username:loginData.username });
+        } catch (error) {
+            console.error('Login failed', error);
+        }
+    };
   return (
     <div  >
-    <Navbar/>
+ 
     <section className="h-100" style={{overflow:'hidden'}}>
       <div className="container-fluid">
         <div className="row">

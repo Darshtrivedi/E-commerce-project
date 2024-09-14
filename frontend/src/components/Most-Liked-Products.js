@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import "../assets/most-liked.css"
 export default function MostLikedProducts() {
-  const[message,setMessage] = useState("")
+
   const[likedProducts,setProducts] = useState([])
   useEffect(()=>{
-    var flag = 'hi';
+
     async function getLikedProducts(){
       try {
         const products = await axios.get("http://127.0.0.1:8000/products/product/")
@@ -63,7 +63,7 @@ else{
     <div>
       <h1>Loading...</h1>
       
-      <h2>{message}</h2>
+ 
     </div>
   )
 }

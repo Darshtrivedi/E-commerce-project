@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/ad-styling.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Carousel, Container } from 'react-bootstrap';
+import { Carousel} from 'react-bootstrap';
 import Image1 from '../assets/images/ad-4.jpg';
 import Image2 from '../assets/images/ad-5.jpg';
 import Image3 from '../assets/images/ad-6.jpg';
