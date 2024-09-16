@@ -2,5 +2,6 @@ npm install react-router-dom
 npm install --save @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
 >>
 (For cloud use SAAS)
+npm install jwt-decode
 
 

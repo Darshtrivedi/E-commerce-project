@@ -4,7 +4,7 @@ import Logo from '../logo192.png';
 import '../assets/navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
+
 
 export default function Navbar({user}) {
   const navigate = useNavigate()
@@ -23,7 +23,7 @@ export default function Navbar({user}) {
     });
   }
   else{
-    alert("Please login first")
+    alert("Please login first!")
     setSearchData({
       search:""
     })
@@ -39,25 +39,6 @@ export default function Navbar({user}) {
       search:""
     })
   };
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState('');
-
-  // Function to check if the user is logged in
-  const checkLoginStatus = async () => {
-    try {
-      const response = await axios.get('http://localhost:8000/api/check-login-status/');
-      setIsLoggedIn(response.data.isLoggedIn);
-      setUsername(response.data.username);
-      console.log(response.data.username)
-    } catch (error) {
-      console.error('Error fetching login status', error);
-    }
-  };
-
-  useEffect(() => {
-    checkLoginStatus();
-  }, []);
 
 
   return (

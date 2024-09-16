@@ -9,6 +9,7 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import ProductDetail from './components/Product-page'
 import Navbar from './components/Navbar'
+import Profile from './components/Profile'
 
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
@@ -23,9 +24,10 @@ function App() {
     useEffect(() => {
         const token = localStorage.getItem('token');
         const username = localStorage.getItem('username');
+        const email = localStorage.getItem('email');
 
         if (token && username) {
-            setUser({ username });
+            setUser({ username , email });
         }
     }, []);
 
@@ -33,9 +35,11 @@ function App() {
         // Clear localStorage and reset user state
         localStorage.removeItem('token');
         localStorage.removeItem('username');
+        localStorage.removeItem('email');
         setUser(null);
     };
 
+    
 
   return (
     <div className='main-page'>
@@ -49,6 +53,7 @@ function App() {
               <Route path="/about#contact" element={<Contact />} />
               <Route path="/login" element={<Login setUser={setUser} />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/profile" element={<Profile user={user} />} />
               
               
               <Route path="/products/:product_id" element={<ProductDetail/>} />
@@ -58,7 +63,7 @@ function App() {
           </Routes>
           {user ? (
                 <div>
-                    <p>Welcome, {user.username}!</p>
+                    <p>Welcome, {user.email}!</p>
                     <button onClick={handleLogout}>Logout</button>
                 </div>
             ) : (

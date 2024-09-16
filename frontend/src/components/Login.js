@@ -1,17 +1,21 @@
 import {React,useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Import Font Awesome
-import Navbar from './Navbar';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate } from 'react-router-dom';
 import '../assets/login.css'
 import axios from 'axios';
+import { jwtDecode } from 'jwt-decode';
+
 
 
 export default function Login({ setUser }) {
+  const navigate = useNavigate()
   const [loginData, setLoginData] = useState({
     username: '',
     password: '',
 });
+
+
 
 const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,9 +25,6 @@ const handleChange = (e) => {
     });
 };
 
-
-
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -32,12 +33,21 @@ const handleChange = (e) => {
               password: loginData.password
             });
             
-            // Save token and user details in localStorage
-            localStorage.setItem('token', response.data.access);
-            localStorage.setItem('username', loginData.username);
+            const token = response.data.access;
+            localStorage.setItem('token', token);
+
+            // Decode token
+            const decodedToken = jwtDecode(token);
+            const username = decodedToken.username;
+            const email = decodedToken.email;
+
+            // Store user details in localStorage
+            localStorage.setItem('username', username);
+            localStorage.setItem('email', email);
 
             // Update user state in parent component
-            setUser({ username:loginData.username });
+            setUser({ username:username,email:email });
+            navigate('/profile')
         } catch (error) {
             console.error('Login failed', error);
         }
