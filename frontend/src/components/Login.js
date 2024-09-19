@@ -8,7 +8,7 @@ import { jwtDecode } from 'jwt-decode';
 
 
 
-export default function Login({ setUser }) {
+export default function Login(props) {
   const navigate = useNavigate()
   const [loginData, setLoginData] = useState({
     username: '',
@@ -46,7 +46,7 @@ const handleChange = (e) => {
             localStorage.setItem('email', email);
 
             // Update user state in parent component
-            setUser({ username:username,email:email });
+            props.setUser({ username:username,email:email });
             navigate('/profile')
         } catch (error) {
             console.error('Login failed', error);
